@@ -8,3 +8,7 @@ atom.symlink/storage
 atom.symlink/themes
 
 git/gitconfig.local.symlink
+
+# Mac
+#
+.DS_Store
