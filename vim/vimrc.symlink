@@ -1,4 +1,140 @@
-syntax on
+" Must come first because it changes other options.
+set nocompatible                  
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" bootstrap the pathogen part of the config right away
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" now proceed as usual
+syntax enable             " syntax highlighing
+filetype on               " try to detect filetypes
+filetype plugin indent on " enable loading indent file for filetype
+
+" Matchit
+runtime macros/matchit.vim        " Load the matchit plugin.
+
+" ==================================================
+" Theme
+" ==================================================
+set t_Co=256
+colorscheme wombat256
+
+" ==================================================
+" Basic Settings
+" ==================================================
+set autoindent
+
+set tabstop=4                    " Global tab width.
+set shiftwidth=4                 " And again, related.
+set expandtab                    " Use spaces instead of tabs
+set tw=2000                       " Line length
+set viminfo='20,<1000,s10,h      " Increase buffer for paste
+
+set showcmd                       " Display incomplete commands.
+set showmode                      " Display the mode you're in.
+
+set backspace=indent,eol,start    " Intuitive backspacing.
+
+set hidden                        " Handle multiple buffers better.
+
+set wildmenu                      " Enhanced command line completion.
+set wildmode=list:longest         " Complete files like a shell.
+
+set relativenumber                " Show line relative numbers.
+set number                        " Show line numbers.
+set ruler                         " Show cursor position.
+
+set wrap                          " Turn on line wrapping.
+set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+set title                         " Set the terminal's title
+
+set visualbell                    " No beeping.
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
+
+set laststatus=2                  " Show the status line all the time
+" Useful status information at bottom of screen
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+" set the paste toggle key
+set pastetoggle=<F11>
+
+" Ruby
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+" ==================================================
+" Basic Maps
+" ==================================================
+"
+" Maps for jj to act as Esc
+
+" Tab mappings.
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+
+" ==================================================
+" Windows / Splits
+" ==================================================
+
+" ctrl-jklm  changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" and lets make these all work in insert mode too ( <C-O> makes next cmd
+" happen as if in command mode )
+imap <C-W> <C-O><C-W>
+
+" use - and + to resize horizontal splits
+map - <C-W>-
+map + <C-W>+
+
+" and for vsplits with alt-< or alt->
+map <M-,> <C-W>>
+map <M-.> <C-W><
+
+" ==================================================
+" Search
+" ==================================================
+
+" Press Ctrl-N to turn off highlighting.
+set hlsearch            " highlight searches
+set incsearch           " do incremental searching
+set ignorecase          " ignore case when searching
+set smartcase           " if searching and search contains upper case, make case sensitive search
+
+nmap <silent> <C-N> :silent noh<CR>
+
+" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
+" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+
+" ==================================================
+" CTRL P
+" ==================================================
+if executable('ag')
+   let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+          \ --ignore .git
+          \ --ignore .svn
+          \ --ignore .modman
+          \ --ignore node_modules
+          \ --ignore bower_components
+          \ --ignore vendor
+          \ --ignore .hg
+          \ --ignore .DS_Store
+          \ --ignore "**/*.pyc"
+          \ -g ""'
+endif
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
