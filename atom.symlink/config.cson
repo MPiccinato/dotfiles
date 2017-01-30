@@ -15,17 +15,21 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "no"
     themes: [
       "unity-ui"
       "glacier-syntax"
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
   "go-plus":
     goPath: "/Users/holman/Code/go"
+  "markdown-preview":
+    useGitHubStyle: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":

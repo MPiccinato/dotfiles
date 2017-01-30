@@ -65,6 +65,8 @@ set pastetoggle=<F11>
 
 " Ruby
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype js setlocal ts=2 sts=2 sw=2
 
 " ==================================================
 " Basic Maps
@@ -117,8 +119,12 @@ set smartcase           " if searching and search contains upper case, make case
 
 nmap <silent> <C-N> :silent noh<CR>
 
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
+
+" ==================================================
+" Vim-Javascript
+" ==================================================
+
+let g:javascript_plugin_jsdoc = 1
 
 " ==================================================
 " CTRL P
