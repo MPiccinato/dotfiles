@@ -28,3 +28,12 @@ do
 done
 
 unset config_files
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# If you installed the SDK via Homebrew, otherwise ~/Library/Android/sdk
+export ANDROID_HOME=/Users/mat/Library/Android/sdk
+
+
+export NODE_ENV=development
