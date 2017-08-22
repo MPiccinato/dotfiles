@@ -16,6 +16,7 @@ brew 'wget'
 
 cask '1password'
 cask 'atom'
+cask 'dropbox'
 cask 'firefox'
 cask 'google-chrome'
 cask 'handbrake'
