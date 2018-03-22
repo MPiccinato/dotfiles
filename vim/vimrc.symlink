@@ -108,6 +108,15 @@ map <M-,> <C-W>>
 map <M-.> <C-W><
 
 " ==================================================
+" Nerd Tree
+" ==================================================
+
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+
+
+" ==================================================
 " Search
 " ==================================================
 
@@ -145,3 +154,7 @@ if executable('ag')
 endif
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
+" ==================================================
+" Mouse
+" ==================================================
+set mouse=a

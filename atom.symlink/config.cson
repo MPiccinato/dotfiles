@@ -28,6 +28,7 @@
   "go-plus":
     goPath: "/Users/holman/Code/go"
   "markdown-preview":
+    breakOnSingleNewline: true
     useGitHubStyle: true
   "release-notes":
     viewedVersion: "0.89.0"

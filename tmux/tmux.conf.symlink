@@ -1,3 +1,4 @@
+set -g mouse on
 
 # vi mode for scrolling
 set-window-option -g status-keys vi
