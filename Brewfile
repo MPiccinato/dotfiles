@@ -13,6 +13,7 @@ brew 'node'
 brew 'readline'
 brew 'roundup'
 brew 'wget'
+brew 'tmux'
 
 cask '1password'
 cask 'atom'
