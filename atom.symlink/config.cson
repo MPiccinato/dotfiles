@@ -4,6 +4,7 @@
       "background-tips"
       "exception-reporting"
       "metrics"
+      "markdown-preview"
     ]
     followSymlinks: false
     hideGitIgnoredFiles: true
@@ -22,6 +23,7 @@
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 18
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
@@ -29,7 +31,6 @@
     goPath: "/Users/holman/Code/go"
   "markdown-preview":
     breakOnSingleNewline: true
-    useGitHubStyle: true
   "release-notes":
     viewedVersion: "0.89.0"
   "spell-check":

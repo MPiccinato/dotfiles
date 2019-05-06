@@ -31,9 +31,11 @@ unset config_files
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.fastlane/bin:$PATH"
 
 # If you installed the SDK via Homebrew, otherwise ~/Library/Android/sdk
 export ANDROID_HOME=/Users/mat/Library/Android/sdk
 
 
 export NODE_ENV=development
+export NPM_TOKEN=843895af-237e-496e-86dd-3df3e829aab6
